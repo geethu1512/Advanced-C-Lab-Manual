@@ -9,13 +9,50 @@ To write a C program to search a given element in the given linked list.
 4.	Call the search function and perform other linked list operations as needed.
  
 ### Program:
+~~~
+struct Node{
+    struct Node *next; 
+    char data;
+}*head;
+void search(char data)
+{
+    struct Node *ptr;
+    char item=data; 
+    int i=0,flag;
+    ptr = head; 
+    if(ptr == NULL)
+    {
+        printf("Empty List\n");
+        
+    }
+    else
+    {
+        while (ptr!=NULL)
+        {
+            if(ptr->data == item)
+            {
+                printf("item %c found at location %d ",item,i+1); 
+                flag=0;
+                
+            }
+            i++;
+            ptr = ptr -> next;
+            
+        }
+        if(flag!=0)
+        {
+            printf("Item not found\n");
+            
+        }
+}
 
-//type your code here
+}
+~~~
 
 ### Output:
 
-//paste your output here
 
+<img width="567" height="395" alt="437958913-513d32ef-bba6-4f04-9ba3-3ec48d906c3c" src="https://github.com/user-attachments/assets/44de20ee-5d39-40ea-be37-e5b6684406ca" />
 
 
 ### Result:
@@ -34,12 +71,38 @@ To write a C program to insert a node in a linked list.
 4.	Call the insert function and perform other linked list operations as needed.
  
 ### Program:
+~~~
+struct Node{ 
+    char data;
+    struct Node *next;
+}*head;
 
-//type your code here
+void insert(char data)
+{
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *temp;
+    if(head==NULL)
+    {
+        head=n;
+        n->data=data; 
+        n->next=NULL; 
+        temp=head; 
+        return;
+}
+while(temp->next!=NULL)
+{
+    temp=temp->next;
+}
+n->data=data; 
+n->next=NULL;
+temp->next=n;
+}
+~~~
 
 ### Output:
 
-//paste your output here
+
+<img width="377" height="337" alt="445005445-83cec064-d01a-46ee-8757-5a7ccf50202e" src="https://github.com/user-attachments/assets/461ed0fb-03ae-46b8-8d83-4433ea135a6a" />
 
  
 ### Result:
@@ -60,12 +123,29 @@ To write a C program to traverse a doubly linked list.
 4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
  
 ### Program:
-
-//type your code here
+~~~
+struct Node
+{
+    struct Node *prev; 
+    struct Node *next; 
+    int data;
+}*head;
+void display()
+{
+    struct Node *temp; 
+    temp=head; 
+    while(temp!=0)
+    {
+        printf("%d ",temp->data); 
+        temp=temp->next;
+        
+    }
+}
+~~~
 
 ### Output:
 
-//paste your output here
+<img width="311" height="376" alt="445005838-c4235ab6-943b-4e85-a317-c539a538d628" src="https://github.com/user-attachments/assets/d90b50e5-230d-4afd-b7eb-6a14ee51e548" />
 
 
 ### Result:
@@ -87,13 +167,43 @@ To write a C program to insert an element in doubly linked list
 5.	Set the new node's prev pointer to the last node and update the last node's next pointer to the new node.
  
 ### Program:
-
-//type your code here
+~~~
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    float data;
+}*head;
+void insert(float data)
+{
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *temp;
+if(head==NULL)
+{
+    head=n;
+    n->data=data;
+    n->next=NULL; 
+    n->prev=NULL; 
+    temp=head;
+}
+else
+{
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;        
+    }
+    n->data=data; 
+    n->next=NULL; 
+    n->prev=temp; 
+    temp->next=n;  
+}
+}
+~~~
 
 ### Output:
 
-//paste your output here
 
+<img width="375" height="512" alt="445006218-98109e34-bfa4-4a6f-bdea-f3102c26270f" src="https://github.com/user-attachments/assets/1c012163-7fd8-4a43-b5e4-a651b8d7c202" />
 
 ### Result:
 
@@ -128,15 +238,37 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 
 ### Program:
-
-//type your code here
+~~~
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
+void delete()
+{
+    if(head==NULL){
+        printf("List is empty\n");
+        return;
+    }
+    else if(head->next==NULL){
+        head=NULL;
+        free(head);
+        printf("Node deleted from the begining ...\n");
+    }
+    else{
+        struct Node *ptr;
+        ptr=head;
+        head=head->next;
+        free(ptr);
+        printf("Node deleted from the begining ...\n");
+    }
+}
+~~~
 
 ### Output:
 
-//paste your output here
 
 
-
+<img width="982" height="684" alt="445006698-d22c798d-c0be-4ecd-b0b8-d1488b16e051" src="https://github.com/user-attachments/assets/7dddfc10-fe93-4b4d-b61d-139a9844024f" />
 
 
 ### Result:

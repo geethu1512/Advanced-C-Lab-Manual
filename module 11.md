@@ -1,4 +1,4 @@
-## EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
+<img width="206" height="274" alt="445010189-a7b9e3f7-aa17-4c8b-8b93-2e18d92197ef" src="https://github.com/user-attachments/assets/d863115b-aebb-4f1a-9dcd-f70b53c88cad" />## EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
 ### Aim:
 To write a C program to create a function to find the greatest number
 
@@ -10,10 +10,38 @@ To write a C program to create a function to find the greatest number
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 ### Program:
-//type your code here
-
+~~~
+#include<stdio.h>
+int max_of_four(int a,int b,int c,int d)
+{
+     if(a>b && a>c && a>d)
+     {
+          return a;
+     }
+     else if(b>a && b>c && b>d)
+     {
+           return b;
+     }
+     else if(c>a && c>b && c>d)
+     {
+           return c;
+     }
+     else
+     {
+           return d;
+     }
+}
+int main()
+{
+     int n1,n2,n3,n4,greater; 
+     scanf("%d%d%d%d",&n1,&n2,&n3,&n4); 
+     greater=max_of_four(n1,n2,n3,n4); 
+     printf("%d",greater);
+}
+~~~
 ### Output:
-//paste your output here
+
+<img width="206" height="274" alt="445010189-a7b9e3f7-aa17-4c8b-8b93-2e18d92197ef" src="https://github.com/user-attachments/assets/eceb3dc0-9529-4a56-830c-e62e1743cc96" />
 
 ### Result:
 
@@ -35,10 +63,41 @@ To write a C program to print the maximum values for the AND, OR and XOR compari
 7.	Call the calculate_the_max function with input values.
  
 ### Program:
-//type your code here
+~~~
+void calculate_the_max(int n,int k)
+{
+       int a=0,o=0,x=0; 
+       for(int i=1;i<=n;i++)
+       {
+            for(int j=1+i;j<=n;j++)
+            {
+                 if((i&j)>a && (i&j)<k)
+                 {
+                      a=i&j;
+                 }
+                 if((i|j)>o && (i|j)<k)
+                 {
+                       o=i|j;
+                 }
+                 if((i^j)>x && (i^j)<k)
+                 {
+                       x=i^j;
+                 }
+            }
+        }
+        printf("%d\n%d\n%d\n",a,o,x);
+}
+int main()
+{
+     int n,k; 
+     scanf("%d%d",&n,&k); 
+     calculate_the_max(n,k);
+}
+~~~
 
 ### Output:
-//paste your output here
+<img width="196" height="212" alt="445010521-314376a3-9f61-4cbd-8148-1711a3f4d53c" src="https://github.com/user-attachments/assets/54c8c4d5-723c-4b8e-9094-341021f73be3" />
+
 
 ### Result:
 
@@ -59,11 +118,46 @@ To write a C program to write the logic for the requests
 5.	Use a for loop to iterate over the queries.
  
 ### Program:
-//type your code here
+~~~
+#include<stdio.h>
+int main()
+{
+     int noshel,noque; 
+     scanf("%d%d",&noshel,&noque); 
+     int shelarr[noshel][noshel];
+     int nobookarr[noshel]; 
+     int k=0,c=0;
+     for(int i=0;i<noque;i++)
+     {
+          int queno; scanf("%d",&queno); 
+          if(queno==1)
+           {
+                int shelno,nopage; 
+                scanf("%d%d",&shelno,&nopage); 
+                shelarr[shelno][k]=nopage; 
+                nobookarr[shelno]=c+=1;
+                k=k+1;
+           }
+           else if(queno==2)
+           {
+                int pshelno,pbookno; 
+                scanf("%d%d",&pshelno,&pbookno); 
+                printf("%d",shelarr[pshelno][pbookno]);
+           }
+           else if(queno==3)
+           {
+                int ppshelno; 
+                scanf("%d",&ppshelno); 
+                printf("%d",nobookarr[ppshelno]);
+           }
+    }
+}
+~~~
 
 ### Output:
-//paste your output here
 
+
+<img width="187" height="153" alt="445013271-678bd491-82a7-4b23-8f35-89bade3719bd" src="https://github.com/user-attachments/assets/10439f00-005b-41d2-960f-7ea490a1e1c8" />
 
 ### Result:
 
@@ -87,13 +181,25 @@ To write a C program print the sum of the integers in the array.
 
 
 ### Program:
-//type your code here
+~~~
+#include<stdio.h> 
+int main()
+{
+    int n; 
+    scanf("%d",&n);
+    int a[n];
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+         scanf("%d",&a[i]); 
+         sum=sum+a[i];
+    }
+    printf("%d",sum);
+}
+~~~
 
 ### Output:
-//paste your output here
-
- 
-
+<img width="346" height="169" alt="445014351-8ba7f552-dea5-4337-a7cd-869a9e13b1bc" src="https://github.com/user-attachments/assets/6866a0b9-b570-47b8-8450-277d00381680" />
 
 ### Result:
 
@@ -120,10 +226,27 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 ### Program:
-//type your code here
+~~~
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+     char str[100];
+     fgets(str,sizeof(str),stdin);
+     int len=sizeof(str);
+     int count=1;
+     for(int i=0;i<len-1;i++){
+     if(str[i]==' ')
+     count++;                         
+     }
+printf("Total number of words in the string is :%d",count);
+return 0;
+}
+~~~
 
 ### Output:
-//paste your output here
+
+<img width="1165" height="166" alt="445016333-89bf17b3-ec10-40db-94df-247f81d66d18" src="https://github.com/user-attachments/assets/5c72f4b6-9300-4cae-9ded-3ea1f56599d6" />
 
 
 

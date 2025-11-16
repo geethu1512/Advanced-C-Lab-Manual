@@ -196,6 +196,5 @@ void dequeue()
 
 
 ### Result:
-
 Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
 ---

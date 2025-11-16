@@ -92,7 +92,7 @@ Thus, the program is verified successfully
 
 ---
  
-## EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
+## EXP NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
 
 Aim:
 To write a C program to read a file name from user
@@ -198,7 +198,7 @@ Thus, the program is verified successfully
 
 ---
 
-## Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
+## EXP No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
 
 Aim:
 The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.

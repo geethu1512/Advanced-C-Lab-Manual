@@ -83,8 +83,8 @@ return n.a+n.b;
 Output:
 
 
+<img width="407" height="308" alt="437373347-1a06ac13-bb32-4a4b-b2c9-ef6f24b5ba14" src="https://github.com/user-attachments/assets/ecc609ea-e7c7-44d0-a998-939ff28adf1d" />
 
-<img width="211" height="246" alt="444974323-03c65dfc-a013-497c-b928-fa1331d67209" src="https://github.com/user-attachments/assets/ccacefc4-2d3e-464c-98a0-95dece843873" />
 
 
 Result:
@@ -116,26 +116,35 @@ Use scanf to input the file name into the name array.
  
 Program:
 ~~~
- #include <stdio.h>
- int main()
+#include <stdio.h>
+
+int main()
 {
-     FILE *p;
-     char name[30];
-     scanf("%s",name);
-     printf("%s File Created Successfully",name);
-     p=fopen("name","w");
-     printf("\n%s File Opened",name);
-     fclose(p);
-     printf("\n%s File Closed",name);
+    FILE *p;
+    char name[30];
+
+    scanf("%s", name);
+
+    printf("%s File Created Successfully", name);
+
+    p = fopen(name, "w"); 
+    printf("\n%s File Opened", name);
+
+    fclose(p);
+    printf("\n%s File Closed", name);
+
+    return 0;
 }
+
 ~~~
 
 Output:
 
 
 
+<img width="991" height="388" alt="437373966-7ed35802-57df-473e-a516-2810e8998ace" src="https://github.com/user-attachments/assets/85ce0dbe-ee33-443c-90d9-a40e3df32038" />
 
-<img width="699" height="250" alt="444974767-e431013b-0c3a-4e4e-9ea1-ecde100c34dd" src="https://github.com/user-attachments/assets/bed7d5f8-de2a-46c8-b245-89f478926a1e" />
+
 
 
 
@@ -188,8 +197,8 @@ int main()
 Output:
 
 
-<img width="499" height="259" alt="444976489-e9208671-28af-4797-8491-7e2b90366a23" src="https://github.com/user-attachments/assets/aae6e03b-01fd-49e6-849b-c816aa36097a" />
 
+<img width="777" height="363" alt="437374228-6055b7d6-0636-464f-98d4-7ac0d3713dad" src="https://github.com/user-attachments/assets/9eda8bc6-d74c-4efb-b276-cf26a1412c62" />
 
 
 
